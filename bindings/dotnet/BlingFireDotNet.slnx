@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BlingFireDotNet.Tests/BlingFireDotNet.Tests.csproj" />
+  <Project Path="BlingFireDotNet/BlingFireDotNet.csproj" />
+</Solution>

@@ -19,7 +19,11 @@ namespace BlingFire
     /// </summary>
     public static class BlingFireUtils2
     {
+#if IOS
+        private const string BlingFireTokDllName = "__Internal";
+#else
         private const string BlingFireTokDllName = "blingfiretokdll";
+#endif
 
         [DllImport(BlingFireTokDllName)]
         public static extern Int32 GetBlingFireTokVersion();

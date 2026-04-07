@@ -1,0 +1,9 @@
+<Project>
+  <ItemGroup>
+    <NativeReference Include="$(MSBuildThisFileDirectory)..\..\runtimes\ios-arm64\native\libblingfiretokdll_static.a">
+      <Kind>Static</Kind>
+      <ForceLoad>true</ForceLoad>
+      <SmartLink>false</SmartLink>
+    </NativeReference>
+  </ItemGroup>
+</Project>

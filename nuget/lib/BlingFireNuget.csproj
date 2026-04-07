@@ -52,6 +52,27 @@
     <None Include="runtimes\linux-arm64\native\*" Pack="true" PackagePath="runtimes\linux-arm64\native" PackageCopyToOutput="true" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="runtimes\ios-arm64\native\*" Pack="true" PackagePath="runtimes\ios-arm64\native" PackageCopyToOutput="true" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="targets\BlingFireNuget.targets" Pack="true" PackagePath="build\net6.0-ios14.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="runtimes\maccatalyst-x64\native\*" Pack="true" PackagePath="runtimes\maccatalyst-x64\native" PackageCopyToOutput="true" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="runtimes\maccatalyst-arm64\native\*" Pack="true" PackagePath="runtimes\maccatalyst-arm64\native" PackageCopyToOutput="true" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="runtimes\android-arm64\native\*" Pack="true" PackagePath="runtimes\android-arm64\native" PackageCopyToOutput="true" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="runtimes\android-arm\native\*" Pack="true" PackagePath="runtimes\android-arm\native" PackageCopyToOutput="true" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="runtimes\android-x64\native\*" Pack="true" PackagePath="runtimes\android-x64\native" PackageCopyToOutput="true" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="*.bin" Pack="true" PackagePath="$(ContentTargetFolders)\cs\any" PackageCopyToOutput="true" />
   </ItemGroup>
   <ItemGroup>

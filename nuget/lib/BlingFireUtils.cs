@@ -18,7 +18,11 @@ using System.Text;
     /// </summary>
     public static class BlingFireUtils
     {
+#if IOS
+        private const string BlingFireTokDllName = "__Internal";
+#else
         private const string BlingFireTokDllName = "blingfiretokdll";
+#endif
 
         [DllImport(BlingFireTokDllName)]
         public static extern Int32 GetBlingFireTokVersion();

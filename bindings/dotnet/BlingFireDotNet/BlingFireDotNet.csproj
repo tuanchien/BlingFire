@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net10.0;net10.0-ios</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Nullable>enable</Nullable>
+    <IsAotCompatible>true</IsAotCompatible>
+
+    <AssemblyName>BlingFireDotNet</AssemblyName>
+    <RootNamespace>BlingFireDotNet</RootNamespace>
+    <Version>0.0.0</Version>
+
+    <PackageId>BlingFireDotNet</PackageId>
+    <Authors>dev</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageReadmeFile></PackageReadmeFile>
+    <RepositoryUrl></RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>BlingFireDotNet tokenization library.</Description>
+    <PackageTags>nlp;sentences;segmentation;multilingual;blingfire</PackageTags>
+
+    <ContentTargetFolders>contentFiles</ContentTargetFolders>
+
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">12.2</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">12.2</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'macos'">15.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">7.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="/" />
+    <None Include="runtimes/*/native/*" Pack="true" PackagePath="%(RelativeDir)%(Filename)%(Extension)" />
+    <None Include="BlingFireDotNet.targets" Pack="true" PackagePath="build/BlingFireDotNet.targets" />
+    <None Include="BlingFireDotNet.targets" Pack="true" PackagePath="buildTransitive/BlingFireDotNet.targets" />
+
+    <None Include="models/*.bin" Pack="true" PackagePath="contentFiles/any/any/%(Filename)%(Extension)" PackageCopyToOutput="true" PublishFolderType="Resources" />
+    <None Include="models/*.i2w" Pack="true" PackagePath="contentFiles/any/any/%(Filename)%(Extension)" PackageCopyToOutput="true" PublishFolderType="Resources" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>BlingFireDotNet.Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="@(Compile)">
+      <Pack>true</Pack>
+      <PackagePath>$(ContentTargetFolders)/any/any</PackagePath>
+    </Compile>
+  </ItemGroup>
+</Project>

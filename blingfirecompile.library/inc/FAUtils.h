@@ -15,6 +15,7 @@
 #include "FAMultiMapCA.h"
 #include "FAStringTokenizer.h"
 #include "FASecurity.h"
+#include <string>
 
 namespace BlingFire
 {

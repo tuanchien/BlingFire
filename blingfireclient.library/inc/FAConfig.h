@@ -23,7 +23,7 @@
 #include <ctype.h>
 #include <fcntl.h>
 
-#ifdef BLING_FIRE_MAC
+#if defined(BLING_FIRE_MAC) || defined(BLING_FIRE_IOS)
   #include <string>
 #else
   #include <malloc.h>
